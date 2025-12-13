@@ -1,0 +1,25 @@
+# Dependencies - NE JAMAIS COMMITER
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json  # Optionnel - à garder seulement si nécessaire
+
+# VS Code
+.vscode/
+
+# Assets (si volumineux)
+# assets/  # Décommentez si vos assets sont gros
+
+# Production builds
+/dist
+/build
+/.next
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
