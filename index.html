@@ -656,6 +656,172 @@
             transition: all 0.3s ease;
         }
         
+        /* Styles pour la section Projects améliorée */
+        .project-featured {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .project-featured h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+        }
+        
+        .project-main-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .project-main-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        
+        .project-main-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack h5 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .tech-stack .badge {
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 50px;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .project-links-section {
+            margin-top: 2rem;
+        }
+        
+        .project-links-section .card {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-links-section .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .project-links-section .card-body {
+            padding: 1.5rem;
+        }
+        
+        .project-links-section .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .project-links-section .card-text {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        /* Modal pour les captures d'écran */
+        .screenshot-modal .modal-dialog {
+            max-width: 90%;
+            margin: 1.75rem auto;
+        }
+        
+        .screenshot-modal .modal-content {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .screenshot-modal .modal-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .screenshot-modal .modal-title {
+            font-weight: 600;
+        }
+        
+        .screenshot-modal .modal-body {
+            padding: 0;
+        }
+        
+        .screenshot-modal img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        
+        .screenshot-modal .btn-close {
+            filter: brightness(0) invert(1);
+        }
+        
         /* Contact Section améliorée */
         .contact-section {
             background: var(--gradient-dark);
@@ -886,6 +1052,14 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            
+            .project-featured {
+                padding: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
         }
         
         @media (max-width: 768px) {
@@ -910,6 +1084,22 @@
                 padding: 0.5rem 1rem !important;
                 margin: 0.2rem 0;
             }
+            
+            .project-featured {
+                padding: 1.5rem;
+            }
+            
+            .project-featured h3 {
+                font-size: 1.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            
+            .screenshot-modal .modal-dialog {
+                max-width: 95%;
+            }
         }
         
         @media (max-width: 576px) {
@@ -933,6 +1123,18 @@
             
             .contact-form {
                 padding: 2rem;
+            }
+            
+            .project-featured {
+                padding: 1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item img {
+                height: 100px;
             }
         }
     </style>
@@ -1350,82 +1552,220 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">
-                    <i class="fas fa-briefcase me-3"></i>Mes projets
-                </h2>
-                <p class="section-subtitle">Découvrez mes principales réalisations et travaux de développement</p>
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase me-3"></i>Mes projets
+            </h2>
+            <p class="section-subtitle">Découvrez mes principales réalisations et travaux de développement</p>
+        </div>
+        
+        <!-- Projet Principal - Plateforme E-transport -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="project-featured fade-in">
+                    <div class="project-featured-header mb-4">
+                        <h3 class="mb-3" style="color: var(--primary-color); font-size: 2rem;">
+                            <i class="fas fa-star me-2"></i>Projet Principal
+                        </h3>
+                        <h4 class="mb-3" style="font-size: 1.8rem; color: var(--dark-color);">Plateforme E-transport - Gestion de Coopérative</h4>
+                        <p class="lead" style="font-size: 1.2rem; color: var(--dark-light);">
+                            Application web complète pour la gestion d'une coopérative de transport avec système de réservation, gestion de véhicules et de clients
+                        </p>
+                    </div>
+                    
+                    <!-- Image principale du projet -->
+                    <div class="project-main-image mb-5">
+                        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                            <div class="card-header bg-primary text-white py-3 d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0"><i class="fas fa-car me-2"></i>Page d'Accueil - Dashboard</h5>
+                                <span class="badge bg-light text-primary">Vue.js + Node.js + MySQL</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="text-center bg-light py-4">
+                                    <img src="assets/img/cooperative/accueil.png" alt="Page d'accueil de la plateforme E-transport" class="img-fluid rounded-3 shadow-sm" style="max-height: 500px; border: 1px solid #dee2e6;">
+                                </div>
+                                <div class="card-footer bg-light py-3 text-center">
+                                    <small class="text-muted">Interface moderne avec vue d'ensemble du parc automobile, des clients, des réservations et des recettes</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Description détaillée -->
+                    <div class="project-description mb-5">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h5 class="mb-3" style="color: var(--dark-color);">Description du projet</h5>
+                                <p class="mb-4">
+                                    Développement d'une plateforme e-transport complète avec un système de gestion intégré pour une coopérative de transport. 
+                                    L'application permet de centraliser toutes les opérations dans une seule interface web moderne et intuitive :
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gestion complète du parc automobile</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gestion des clients et contacts</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Système de réservation avancé</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Suivi des paiements et génération de reçus</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Statistiques et tableaux de bord</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Génération de PDF (reçus)</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Interface responsive et moderne</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Base de données relationnelle</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card border-0 shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-light">
+                                        <h6 class="mb-0"><i class="fas fa-cogs me-2"></i>Technologies utilisées</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tech-stack">
+                                            <span class="badge bg-primary mb-2 p-2 d-block">Vue.js (Frontend)</span>
+                                            <span class="badge bg-success mb-2 p-2 d-block">Node.js + Express (Backend)</span>
+                                            <span class="badge bg-info mb-2 p-2 d-block">MySQL (Base de données)</span>
+                                            <span class="badge bg-warning mb-2 p-2 d-block">HTML5/CSS3/JavaScript</span>
+                                            <span class="badge bg-secondary mb-2 p-2 d-block">Bootstrap 5</span>
+                                            <span class="badge bg-dark mb-2 p-2 d-block">PDF Generation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Galerie de captures d'écran -->
+                    <div class="project-gallery mb-5">
+                        <h5 class="mb-4" style="color: var(--dark-color);">
+                            <i class="fas fa-images me-2"></i>Autres captures d'écran
+                        </h5>
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                    <div class="card-header bg-light py-2">
+                                        <h6 class="mb-0 text-center">Gestion des Réservations</h6>
+                                    </div>
+                                    <div class="card-body p-0 text-center bg-light">
+                                        <img src="assets/img/cooperative/reservation.png" alt="Gestion des réservations" class="img-fluid" style="max-height: 200px;">
+                                    </div>
+                                    <div class="card-footer bg-light py-2 text-center">
+                                        <small class="text-muted">Interface de gestion des réservations</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                    <div class="card-header bg-light py-2">
+                                        <h6 class="mb-0 text-center">Gestion des Véhicules</h6>
+                                    </div>
+                                    <div class="card-body p-0 text-center bg-light">
+                                        <img src="assets/img/cooperative/voiture.png" alt="Gestion des véhicules" class="img-fluid" style="max-height: 200px;">
+                                    </div>
+                                    <div class="card-footer bg-light py-2 text-center">
+                                        <small class="text-muted">Gestion du parc automobile</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                    <div class="card-header bg-light py-2">
+                                        <h6 class="mb-0 text-center">Gestion des Clients</h6>
+                                    </div>
+                                    <div class="card-body p-0 text-center bg-light">
+                                        <img src="assets/img/cooperative/client.png" alt="Gestion des clients" class="img-fluid" style="max-height: 200px;">
+                                    </div>
+                                    <div class="card-footer bg-light py-2 text-center">
+                                        <small class="text-muted">Base de données clients</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                    <div class="card-header bg-light py-2">
+                                        <h6 class="mb-0 text-center">Statistiques</h6>
+                                    </div>
+                                    <div class="card-body p-0 text-center bg-light">
+                                        <img src="assets/img/cooperative/statistiques.png" alt="Page de statistiques" class="img-fluid" style="max-height: 200px;">
+                                    </div>
+                                    <div class="card-footer bg-light py-2 text-center">
+                                        <small class="text-muted">Tableaux de bord et statistiques</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                    <div class="card-header bg-light py-2">
+                                        <h6 class="mb-0 text-center">Génération de Reçus</h6>
+                                    </div>
+                                    <div class="card-body p-0 text-center bg-light">
+                                        <img src="assets/img/cooperative/recu_pdf.png" alt="Génération de reçus PDF" class="img-fluid" style="max-height: 200px;">
+                                    </div>
+                                    <div class="card-footer bg-light py-2 text-center">
+                                        <small class="text-muted">Génération automatique de reçus PDF</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Liens GitHub -->
+                    <div class="project-links-section mb-5">
+                        <h5 class="mb-4" style="color: var(--dark-color);">
+                            <i class="fab fa-github me-2"></i>Code Source
+                        </h5>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-dark text-white">
+                                        <h6 class="mb-0"><i class="fas fa-desktop me-2"></i>Frontend (Vue.js)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Interface utilisateur développée avec Vue.js, Bootstrap 5 et JavaScript moderne.</p>
+                                        <a href="https://github.com/romario3904/cooperative-reservation-frontend.git" target="_blank" class="btn btn-dark w-100">
+                                            <i class="fab fa-github me-2"></i>Voir le dépôt Frontend
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm rounded-3 h-100">
+                                    <div class="card-header bg-secondary text-white">
+                                        <h6 class="mb-0"><i class="fas fa-server me-2"></i>Backend (Node.js)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">API REST développée avec Node.js, Express et MySQL pour la gestion des données.</p>
+                                        <a href="https://github.com/romario3904/cooperative-reservation-backend.git" target="_blank" class="btn btn-secondary w-100">
+                                            <i class="fab fa-github me-2"></i>Voir le dépôt Backend
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Boutons d'action -->
+                    <div class="project-actions text-center">
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="#contact" class="btn btn-primary btn-lg px-5">
+                                <i class="fas fa-envelope me-2"></i>Me contacter pour ce projet
+                            </a>
+                            <button type="button" class="btn btn-outline-primary btn-lg px-5" id="showAllScreenshots">
+                                <i class="fas fa-expand me-2"></i>Voir toutes les captures
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card fade-in">
-                        <div class="project-image">
-                            <img src="assets/img/cooperative/accueil.png" >
-                        </div>
-                        <div class="project-content">
-                            <h4>Plateforme E-transport</h4>
-                            <p>Développement d'une plateforme e-transport avec un système de gestion complet pour une coopérative de transport, permettant de centraliser toutes les opérations dans une seule application web moderne et facile à utiliser.</p>
-                            <div class="project-tech">
-                                <span class="badge">Vue</span>
-                                <span class="badge">Node.js</span>
-                                <span class="badge">MySQL</span>
-                                <span class="badge">Express</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn btn-primary">
-                                    <i class="fas fa-external-link-alt me-1"></i>Autres captures d'écrans
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card fade-in" style="animation-delay: 0.1s;">
-                        <div class="project-image">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <div class="project-content">
-                            <h4>Application de Gestion</h4>
-                            <p>Application web responsive pour la gestion de projets avec équipes multiples, deadlines et suivi en temps réel des tâches.</p>
-                            <div class="project-tech">
-                                <span class="badge">Vue.js</span>
-                                <span class="badge">C#</span>
-                                <span class="badge">SQLite</span>
-                                <span class="badge">ASP.NET</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn btn-primary">
-                                    <i class="fas fa-external-link-alt me-1"></i>Voir le projet
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card fade-in" style="animation-delay: 0.2s;">
-                        <div class="project-image">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <div class="project-content">
-                            <h4>Dashboard Analytics</h4>
-                            <p>Tableau de bord interactif pour l'analyse de données avec visualisations graphiques avancées et rapports automatisés.</p>
-                            <div class="project-tech">
-                                <span class="badge">Angular</span>
-                                <span class="badge">Java</span>
-                                <span class="badge">MySQL</span>
-                                <span class="badge">Spring Boot</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn btn-primary">
-                                    <i class="fas fa-external-link-alt me-1"></i>Voir le projet
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+
             </div>
         </div>
     </section>
@@ -1663,6 +2003,91 @@
                 });
             }
         });
+        // Gestion des captures d'écran
+document.addEventListener('DOMContentLoaded', function() {
+    // Créer un modal pour afficher les captures d'écran
+    const modalHTML = `
+        <div class="modal fade screenshot-modal" id="screenshotsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Captures d'écran - Plateforme E-transport</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="screenshotsCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/cooperative/accueil.png" class="d-block w-100" alt="Page d'accueil">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                        <h5>Page d'Accueil - Dashboard</h5>
+                                        <p>Vue d'ensemble du parc automobile, des clients, des réservations et des recettes</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/cooperative/reservation.png" class="d-block w-100" alt="Gestion des réservations">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                        <h5>Gestion des Réservations</h5>
+                                        <p>Interface complète pour la gestion des réservations et du planning</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/cooperative/voiture.png" class="d-block w-100" alt="Gestion des véhicules">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                        <h5>Gestion des Véhicules</h5>
+                                        <p>Gestion complète du parc automobile avec types, places et frais</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/cooperative/client.png" class="d-block w-100" alt="Gestion des clients">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                        <h5>Gestion des Clients</h5>
+                                        <p>Base de données clients avec recherche et gestion des contacts</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/cooperative/statistiques.png" class="d-block w-100" alt="Statistiques">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                        <h5>Statistiques et Rapports</h5>
+                                        <p>Tableaux de bord avec statistiques détaillées et visualisations</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#screenshotsCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#screenshotsCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Ajouter le modal au body
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Gérer le clic sur "Voir toutes les captures"
+    document.getElementById('showAllScreenshots').addEventListener('click', function() {
+        const modal = new bootstrap.Modal(document.getElementById('screenshotsModal'));
+        modal.show();
+    });
+    
+    // Gérer le clic sur l'image principale
+    document.querySelector('.project-main-image img').addEventListener('click', function() {
+        const modal = new bootstrap.Modal(document.getElementById('screenshotsModal'));
+        modal.show();
+    });
+});
     </script>
 </body>
 </html>
