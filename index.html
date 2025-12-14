@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODY Eugène Romario - Portfolio Développeur Web</title>
     
-    <!-- Bootstrap CSS local -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS local avec fallback CDN -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fallback CDN si local échoue -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -1014,7 +1019,7 @@
                     <div class="fade-in" style="animation-delay: 0.2s;">
                         <div class="profile-card">
                             <div class="profile-img">
-                                <img src="assets/img/romario_profil.jpg" alt="TODY Eugène Romario">
+                                <img src="/assets/img/romario_profil.jpg" alt="TODY Eugène Romario" onerror="this.src='https://via.placeholder.com/220x220/4361ee/ffffff?text=TR'">
                             </div>
                             <div class="profile-info">
                                 <h4>TODY Eugène Romario</h4>
@@ -1527,20 +1532,39 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle local -->
-    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Bootstrap JS Bundle avec fallback -->
+    <script src="/assets/js/bootstrap.bundle.min.js" defer onerror="loadBootstrapFallback()"></script>
     
     <script>
+        // Fonction fallback pour charger Bootstrap depuis CDN
+        function loadBootstrapFallback() {
+            console.log('Chargement de Bootstrap depuis CDN...');
+            
+            // Charger le JS depuis CDN
+            var script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+            script.integrity = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
+            script.crossorigin = 'anonymous';
+            script.defer = true;
+            document.head.appendChild(script);
+            
+            // Mettre à jour le CSS si nécessaire
+            var bootstrapLink = document.querySelector('link[href*="bootstrap"]');
+            if (bootstrapLink && bootstrapLink.href.includes('/assets/css/')) {
+                bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+            }
+            
+            return true;
+        }
+        
         // Vérifier si Bootstrap est chargé
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof bootstrap === 'undefined') {
-                console.error('Bootstrap n\'est pas chargé. Vérifiez le chemin du fichier.');
-                // Charger depuis CDN en fallback
-                var script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
-                script.defer = true;
-                document.head.appendChild(script);
-            }
+            setTimeout(function() {
+                if (typeof bootstrap === 'undefined') {
+                    console.log('Bootstrap non détecté, utilisation du fallback...');
+                    loadBootstrapFallback();
+                }
+            }, 1000);
         });
 
         // Navigation scroll effect
@@ -1664,35 +1688,7 @@
             this.reset();
         });
         
-        // Add CSS for button ripple effect
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .btn-primary {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .btn-primary::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 0;
-                height: 0;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.3);
-                transform: translate(-50%, -50%);
-                transition: width 0.6s, height 0.6s;
-            }
-            
-            .btn-primary:active::after {
-                width: 300px;
-                height: 300px;
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Initialize tooltips (vérifie que Bootstrap est chargé)
+        // Initialize tooltips
         function initTooltips() {
             if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
                 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
@@ -1700,13 +1696,15 @@
                     return new bootstrap.Tooltip(tooltipTriggerEl);
                 });
             } else {
-                // Retry after a delay if Bootstrap not loaded
-                setTimeout(initTooltips, 500);
+                // Retry after a delay
+                setTimeout(initTooltips, 1000);
             }
         }
         
         // Initialize tooltips after page load
-        window.addEventListener('load', initTooltips);
+        window.addEventListener('load', function() {
+            setTimeout(initTooltips, 1500);
+        });
     </script>
 </body>
 </html>
