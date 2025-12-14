@@ -855,6 +855,15 @@
             transform: translateY(0);
         }
         
+        /* Couleurs pour les icônes */
+        .text-react { color: #61dafb; }
+        .text-vue { color: #41b883; }
+        .text-angular { color: #dd0031; }
+        .text-csharp { color: #239120; }
+        .text-postgresql { color: #336791; }
+        .text-sqlite { color: #003b57; }
+        .text-purple { color: #6f42c1 !important; }
+        
         /* Responsive */
         @media (max-width: 1200px) {
             .hero-title {
@@ -1182,13 +1191,37 @@
                         <div class="skill-item">
                             <div class="skill-header">
                                 <div class="skill-name">
-                                    <i class="fab fa-bootstrap text-purple"></i>
-                                    Bootstrap
+                                    <i class="fab fa-react text-react"></i>
+                                    React.js
                                 </div>
-                                <div class="skill-percentage">85%</div>
+                                <div class="skill-percentage">75%</div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar" data-width="85%"></div>
+                                <div class="progress-bar" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <i class="fab fa-vuejs text-vue"></i>
+                                    Vue.js
+                                </div>
+                                <div class="skill-percentage">70%</div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <i class="fab fa-angular text-angular"></i>
+                                    Angular
+                                </div>
+                                <div class="skill-percentage">65%</div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="65%"></div>
                             </div>
                         </div>
                     </div>
@@ -1211,8 +1244,8 @@
                         <div class="skill-item">
                             <div class="skill-header">
                                 <div class="skill-name">
-                                    <i class="fab fa-python text-success"></i>
-                                    Python
+                                    <i class="fab fa-microsoft text-csharp"></i>
+                                    C#
                                 </div>
                                 <div class="skill-percentage">70%</div>
                             </div>
@@ -1264,13 +1297,25 @@
                         <div class="skill-item">
                             <div class="skill-header">
                                 <div class="skill-name">
-                                    <i class="fas fa-leaf text-success"></i>
-                                    MongoDB
+                                    <i class="fas fa-database text-postgresql"></i>
+                                    PostgreSQL
                                 </div>
-                                <div class="skill-percentage">65%</div>
+                                <div class="skill-percentage">75%</div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar" data-width="65%"></div>
+                                <div class="progress-bar" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <i class="fas fa-database text-sqlite"></i>
+                                    SQLite
+                                </div>
+                                <div class="skill-percentage">70%</div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -1322,11 +1367,10 @@
                             <h4>Plateforme E-commerce</h4>
                             <p>Développement d'une plateforme e-commerce complète avec système de panier, paiement sécurisé et gestion des commandes en temps réel.</p>
                             <div class="project-tech">
-                                <span class="badge">HTML5</span>
-                                <span class="badge">CSS3</span>
-                                <span class="badge">JavaScript</span>
-                                <span class="badge">PHP</span>
-                                <span class="badge">MySQL</span>
+                                <span class="badge">React</span>
+                                <span class="badge">Node.js</span>
+                                <span class="badge">PostgreSQL</span>
+                                <span class="badge">Express</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="btn btn-primary">
@@ -1345,10 +1389,10 @@
                             <h4>Application de Gestion</h4>
                             <p>Application web responsive pour la gestion de projets avec équipes multiples, deadlines et suivi en temps réel des tâches.</p>
                             <div class="project-tech">
-                                <span class="badge">React</span>
-                                <span class="badge">Node.js</span>
-                                <span class="badge">MongoDB</span>
-                                <span class="badge">Express</span>
+                                <span class="badge">Vue.js</span>
+                                <span class="badge">C#</span>
+                                <span class="badge">SQLite</span>
+                                <span class="badge">ASP.NET</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="btn btn-primary">
@@ -1367,10 +1411,10 @@
                             <h4>Dashboard Analytics</h4>
                             <p>Tableau de bord interactif pour l'analyse de données avec visualisations graphiques avancées et rapports automatisés.</p>
                             <div class="project-tech">
-                                <span class="badge">Python</span>
-                                <span class="badge">Django</span>
+                                <span class="badge">Angular</span>
+                                <span class="badge">Java</span>
                                 <span class="badge">MySQL</span>
-                                <span class="badge">Chart.js</span>
+                                <span class="badge">Spring Boot</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="btn btn-primary">
@@ -1608,13 +1652,9 @@
             this.reset();
         });
         
-        // Add CSS for purple color class
+        // Add CSS for button ripple effect
         const style = document.createElement('style');
         style.innerHTML = `
-            .text-purple {
-                color: #6f42c1 !important;
-            }
-            
             .btn-primary {
                 position: relative;
                 overflow: hidden;

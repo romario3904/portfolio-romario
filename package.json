@@ -1,23 +1,41 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.8"
-  },
-  "name": "portfolio",
+  "name": "portfolio-tody-romario",
   "version": "1.0.0",
-  "description": "Portfolio professionnel développé avec JavaScript et Bootstrap pour TODY Eugène Romario, étudiant en première année de master professionnel à l'École Nationale d'Informatique.",
-  "main": "script.js",
-  "devDependencies": {
-    "live-server": "^1.2.2",
-    "copyfiles": "^2.4.1"
-  },
+  "description": "Portfolio professionnel de TODY Eugène Romario - Développeur Web Full-Stack",
+  "main": "index.html",
   "scripts": {
     "start": "live-server .",
     "copy-bootstrap": "copyfiles -u 3 \"node_modules/bootstrap/dist/**/*\" assets/",
     "setup": "npm run copy-bootstrap",
-    "build": "npm run copy-bootstrap",
-    "dev": "npm run build && npm start"
+    "build": "node build.js",
+    "dev": "npm run build && npm start",
+    "vercel-build": "npm run build"
   },
-  "keywords": ["portfolio", "bootstrap", "javascript", "web-development"],
-  "author": "TODY Eugène Romario",
-  "license": "ISC"
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "copyfiles": "^2.4.1"
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "bootstrap",
+    "javascript",
+    "developer",
+    "frontend",
+    "backend",
+    "fullstack"
+  ],
+  "author": "TODY Eugène Romario <romarioeugene4@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romario3904/portfolio-romario.git"
+  },
+  "bugs": {
+    "url": "https://github.com/romario3904/portfolio-romario/issues"
+  },
+  "homepage": "https://portfolio-romario.vercel.app"
 }
