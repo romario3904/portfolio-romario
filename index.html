@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODY Eugène Romario - Portfolio Développeur Web</title>
     
-    <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Bootstrap CSS local -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -1527,10 +1527,22 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.bundle.min.js" defer crossorigin="anonymous" defer crossorigin="anonymous"></script>
+    <!-- Bootstrap JS Bundle local -->
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
     
     <script>
+        // Vérifier si Bootstrap est chargé
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof bootstrap === 'undefined') {
+                console.error('Bootstrap n\'est pas chargé. Vérifiez le chemin du fichier.');
+                // Charger depuis CDN en fallback
+                var script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+                script.defer = true;
+                document.head.appendChild(script);
+            }
+        });
+
         // Navigation scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -1680,11 +1692,21 @@
         `;
         document.head.appendChild(style);
         
-        // Initialize tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
+        // Initialize tooltips (vérifie que Bootstrap est chargé)
+        function initTooltips() {
+            if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
+                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            } else {
+                // Retry after a delay if Bootstrap not loaded
+                setTimeout(initTooltips, 500);
+            }
+        }
+        
+        // Initialize tooltips after page load
+        window.addEventListener('load', initTooltips);
     </script>
 </body>
 </html>
