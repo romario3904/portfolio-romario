@@ -1574,201 +1574,207 @@
                         <p class="lead" style="font-size: 1.2rem; color: var(--dark-light);">
                             Application web complète pour la gestion d'une coopérative de transport avec système de réservation, gestion de véhicules et de clients
                         </p>
+                        
+                        <!-- Bouton Voir plus de détails -->
+                        <button class="btn btn-outline-primary btn-lg mt-3" id="toggleProjectDetails">
+                            <i class="fas fa-chevron-down me-2"></i>Voir plus de détails
+                        </button>
                     </div>
                     
-                    <!-- Image principale du projet -->
-                    <div class="project-main-image mb-5">
-                        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-                            <div class="card-header bg-primary text-white py-3 d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0"><i class="fas fa-car me-2"></i>Page d'Accueil - Dashboard</h5>
-                                <span class="badge bg-light text-primary">Vue.js + Node.js + MySQL</span>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="text-center bg-light py-4">
-                                    <img src="assets/img/cooperative/accueil.png" alt="Page d'accueil de la plateforme E-transport" class="img-fluid rounded-3 shadow-sm" style="max-height: 500px; border: 1px solid #dee2e6;">
+                    <!-- Contenu détaillé (masqué par défaut) -->
+                    <div id="projectDetails" style="display: none;">
+                        <!-- Image principale du projet -->
+                        <div class="project-main-image mb-5">
+                            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                                <div class="card-header bg-primary text-white py-3 d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0"><i class="fas fa-car me-2"></i>Page d'Accueil - Dashboard</h5>
+                                    <span class="badge bg-light text-primary">Vue.js + Node.js + MySQL</span>
                                 </div>
-                                <div class="card-footer bg-light py-3 text-center">
-                                    <small class="text-muted">Interface moderne avec vue d'ensemble du parc automobile, des clients, des réservations et des recettes</small>
+                                <div class="card-body p-0">
+                                    <div class="text-center bg-light py-4">
+                                        <img src="assets/img/cooperative/accueil.png" alt="Page d'accueil de la plateforme E-transport" class="img-fluid rounded-3 shadow-sm" style="max-height: 500px; border: 1px solid #dee2e6;">
+                                    </div>
+                                    <div class="card-footer bg-light py-3 text-center">
+                                        <small class="text-muted">Interface moderne avec vue d'ensemble du parc automobile, des clients, des réservations et des recettes</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Description détaillée -->
-                    <div class="project-description mb-5">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h5 class="mb-3" style="color: var(--dark-color);">Description du projet</h5>
-                                <p class="mb-4">
-                                    Développement d'une plateforme e-transport complète avec un système de gestion intégré pour une coopérative de transport. 
-                                    L'application permet de centraliser toutes les opérations dans une seule interface web moderne et intuitive :
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="list-unstyled">
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gestion complète du parc automobile</li>
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gestion des clients et contacts</li>
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Système de réservation avancé</li>
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Suivi des paiements et génération de reçus</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="list-unstyled">
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Statistiques et tableaux de bord</li>
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Génération de PDF (reçus)</li>
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Interface responsive et moderne</li>
-                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Base de données relationnelle</li>
-                                        </ul>
+                        
+                        <!-- Description détaillée -->
+                        <div class="project-description mb-5">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h5 class="mb-3" style="color: var(--dark-color);">Description du projet</h5>
+                                    <p class="mb-4">
+                                        Développement d'une plateforme e-transport complète avec un système de gestion intégré pour une coopérative de transport. 
+                                        L'application permet de centraliser toutes les opérations dans une seule interface web moderne et intuitive :
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="list-unstyled">
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gestion complète du parc automobile</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Gestion des clients et contacts</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Système de réservation avancé</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Suivi des paiements et génération de reçus</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="list-unstyled">
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Statistiques et tableaux de bord</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Génération de PDF (reçus)</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Interface responsive et moderne</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Base de données relationnelle</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card border-0 shadow-sm rounded-3 h-100">
-                                    <div class="card-header bg-light">
-                                        <h6 class="mb-0"><i class="fas fa-cogs me-2"></i>Technologies utilisées</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="tech-stack">
-                                            <span class="badge bg-white-smoke mb-2 p-2 d-block">Vue.js (Frontend)</span>
-                                            <span class="badge bg-white-smoke mb-2 p-2 d-block">Node.js + Express (Backend)</span>
-                                            <span class="badge bg-white-smoke mb-2 p-2 d-block">MySQL (Base de données)</span>
-                                            <span class="badge bg-white-smoke mb-2 p-2 d-block">HTML5/CSS3/JavaScript</span>
-                                            <span class="badge bg-white-smoke mb-2 p-2 d-block">Bootstrap 5</span>
-                                            <span class="badge bg-white-smoke mb-2 p-2 d-block">PDF Generation</span>
+                                <div class="col-lg-4">
+                                    <div class="card border-0 shadow-sm rounded-3 h-100">
+                                        <div class="card-header bg-light">
+                                            <h6 class="mb-0"><i class="fas fa-cogs me-2"></i>Technologies utilisées</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="tech-stack">
+                                                <span class="badge bg-light mb-2 p-2 d-block">Vue.js (Frontend)</span>
+                                                <span class="badge bg-light mb-2 p-2 d-block">Node.js + Express (Backend)</span>
+                                                <span class="badge bg-light mb-2 p-2 d-block">MySQL (Base de données)</span>
+                                                <span class="badge bg-light mb-2 p-2 d-block">HTML5/CSS3/JavaScript</span>
+                                                <span class="badge bg-light mb-2 p-2 d-block">Bootstrap 5</span>
+                                                <span class="badge bg-light mb-2 p-2 d-block">PDF Generation</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Galerie de captures d'écran -->
-                    <div class="project-gallery mb-5">
-                        <h5 class="mb-4" style="color: var(--dark-color);">
-                            <i class="fas fa-images me-2"></i>Autres captures d'écran
-                        </h5>
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
-                                    <div class="card-header bg-light py-2">
-                                        <h6 class="mb-0 text-center">Gestion des Réservations</h6>
-                                    </div>
-                                    <div class="card-body p-0 text-center bg-light">
-                                        <img src="assets/img/cooperative/reservation.png" alt="Gestion des réservations" class="img-fluid" style="max-height: 200px;">
-                                    </div>
-                                    <div class="card-footer bg-light py-2 text-center">
-                                        <small class="text-muted">Interface de gestion des réservations</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
-                                    <div class="card-header bg-light py-2">
-                                        <h6 class="mb-0 text-center">Gestion des Véhicules</h6>
-                                    </div>
-                                    <div class="card-body p-0 text-center bg-light">
-                                        <img src="assets/img/cooperative/voiture.png" alt="Gestion des véhicules" class="img-fluid" style="max-height: 200px;">
-                                    </div>
-                                    <div class="card-footer bg-light py-2 text-center">
-                                        <small class="text-muted">Gestion du parc automobile</small>
+                        
+                        <!-- Galerie de captures d'écran -->
+                        <div class="project-gallery mb-5">
+                            <h5 class="mb-4" style="color: var(--dark-color);">
+                                <i class="fas fa-images me-2"></i>Autres captures d'écran
+                            </h5>
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                        <div class="card-header bg-light py-2">
+                                            <h6 class="mb-0 text-center">Gestion des Réservations</h6>
+                                        </div>
+                                        <div class="card-body p-0 text-center bg-light">
+                                            <img src="assets/img/cooperative/reservation.png" alt="Gestion des réservations" class="img-fluid" style="max-height: 200px;">
+                                        </div>
+                                        <div class="card-footer bg-light py-2 text-center">
+                                            <small class="text-muted">Interface de gestion des réservations</small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
-                                    <div class="card-header bg-light py-2">
-                                        <h6 class="mb-0 text-center">Gestion des Clients</h6>
-                                    </div>
-                                    <div class="card-body p-0 text-center bg-light">
-                                        <img src="assets/img/cooperative/client.png" alt="Gestion des clients" class="img-fluid" style="max-height: 200px;">
-                                    </div>
-                                    <div class="card-footer bg-light py-2 text-center">
-                                        <small class="text-muted">Base de données clients</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
-                                    <div class="card-header bg-light py-2">
-                                        <h6 class="mb-0 text-center">Statistiques</h6>
-                                    </div>
-                                    <div class="card-body p-0 text-center bg-light">
-                                        <img src="assets/img/cooperative/statistiques.png" alt="Page de statistiques" class="img-fluid" style="max-height: 200px;">
-                                    </div>
-                                    <div class="card-footer bg-light py-2 text-center">
-                                        <small class="text-muted">Tableaux de bord et statistiques</small>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                        <div class="card-header bg-light py-2">
+                                            <h6 class="mb-0 text-center">Gestion des Véhicules</h6>
+                                        </div>
+                                        <div class="card-body p-0 text-center bg-light">
+                                            <img src="assets/img/cooperative/voiture.png" alt="Gestion des véhicules" class="img-fluid" style="max-height: 200px;">
+                                        </div>
+                                        <div class="card-footer bg-light py-2 text-center">
+                                            <small class="text-muted">Gestion du parc automobile</small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
-                                    <div class="card-header bg-light py-2">
-                                        <h6 class="mb-0 text-center">Génération de Reçus</h6>
-                                    </div>
-                                    <div class="card-body p-0 text-center bg-light">
-                                        <img src="assets/img/cooperative/recu_pdf.png" alt="Génération de reçus PDF" class="img-fluid" style="max-height: 200px;">
-                                    </div>
-                                    <div class="card-footer bg-light py-2 text-center">
-                                        <small class="text-muted">Génération automatique de reçus PDF</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Liens GitHub -->
-                    <div class="project-links-section mb-5">
-                        <h5 class="mb-4" style="color: var(--dark-color);">
-                            <i class="fab fa-github me-2"></i>Code Source
-                        </h5>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card border-0 shadow-sm rounded-3 h-100">
-                                    <div class="card-header bg-dark text-white">
-                                        <h6 class="mb-0"><i class="fas fa-desktop me-2"></i>Frontend (Vue.js)</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Interface utilisateur développée avec Vue.js, Bootstrap 5 et JavaScript moderne.</p>
-                                        <a href="https://github.com/romario3904/cooperative-reservation-frontend.git" target="_blank" class="btn btn-dark w-100">
-                                            <i class="fab fa-github me-2"></i>Voir le dépôt Frontend
-                                        </a>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                        <div class="card-header bg-light py-2">
+                                            <h6 class="mb-0 text-center">Gestion des Clients</h6>
+                                        </div>
+                                        <div class="card-body p-0 text-center bg-light">
+                                            <img src="assets/img/cooperative/client.png" alt="Gestion des clients" class="img-fluid" style="max-height: 200px;">
+                                        </div>
+                                        <div class="card-footer bg-light py-2 text-center">
+                                            <small class="text-muted">Base de données clients</small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card border-0 shadow-sm rounded-3 h-100">
-                                    <div class="card-header bg-secondary text-white">
-                                        <h6 class="mb-0"><i class="fas fa-server me-2"></i>Backend (Node.js)</h6>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                        <div class="card-header bg-light py-2">
+                                            <h6 class="mb-0 text-center">Statistiques</h6>
+                                        </div>
+                                        <div class="card-body p-0 text-center bg-light">
+                                            <img src="assets/img/cooperative/statistiques.png" alt="Page de statistiques" class="img-fluid" style="max-height: 200px;">
+                                        </div>
+                                        <div class="card-footer bg-light py-2 text-center">
+                                            <small class="text-muted">Tableaux de bord et statistiques</small>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="card-text">API REST développée avec Node.js, Express et MySQL pour la gestion des données.</p>
-                                        <a href="https://github.com/romario3904/cooperative-reservation-backend.git" target="_blank" class="btn btn-secondary w-100">
-                                            <i class="fab fa-github me-2"></i>Voir le dépôt Backend
-                                        </a>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="gallery-item card border-0 shadow-sm rounded-3 h-100 overflow-hidden">
+                                        <div class="card-header bg-light py-2">
+                                            <h6 class="mb-0 text-center">Génération de Reçus</h6>
+                                        </div>
+                                        <div class="card-body p-0 text-center bg-light">
+                                            <img src="assets/img/cooperative/recu_pdf.png" alt="Génération de reçus PDF" class="img-fluid" style="max-height: 200px;">
+                                        </div>
+                                        <div class="card-footer bg-light py-2 text-center">
+                                            <small class="text-muted">Génération automatique de reçus PDF</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Boutons d'action -->
-                    <div class="project-actions text-center">
-                        <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <a href="#contact" class="btn btn-primary btn-lg px-5">
-                                <i class="fas fa-envelope me-2"></i>Me contacter pour ce projet
-                            </a>
-                            <button type="button" class="btn btn-outline-primary btn-lg px-5" id="showAllScreenshots">
-                                <i class="fas fa-expand me-2"></i>Voir toutes les captures
-                            </button>
+                        
+                        <!-- Liens GitHub -->
+                        <div class="project-links-section mb-5">
+                            <h5 class="mb-4" style="color: var(--dark-color);">
+                                <i class="fab fa-github me-2"></i>Code Source
+                            </h5>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card border-0 shadow-sm rounded-3 h-100">
+                                        <div class="card-header bg-dark text-white">
+                                            <h6 class="mb-0"><i class="fas fa-desktop me-2"></i>Frontend (Vue.js)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">Interface utilisateur développée avec Vue.js, Bootstrap 5 et JavaScript moderne.</p>
+                                            <a href="https://github.com/romario3904/cooperative-reservation-frontend.git" target="_blank" class="btn btn-dark w-100">
+                                                <i class="fab fa-github me-2"></i>Voir le dépôt Frontend
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card border-0 shadow-sm rounded-3 h-100">
+                                        <div class="card-header bg-secondary text-white">
+                                            <h6 class="mb-0"><i class="fas fa-server me-2"></i>Backend (Node.js)</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">API REST développée avec Node.js, Express et MySQL pour la gestion des données.</p>
+                                            <a href="https://github.com/romario3904/cooperative-reservation-backend.git" target="_blank" class="btn btn-secondary w-100">
+                                                <i class="fab fa-github me-2"></i>Voir le dépôt Backend
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Boutons d'action -->
+                        <div class="project-actions text-center">
+                            <div class="d-flex flex-wrap justify-content-center gap-3">
+                                <a href="#contact" class="btn btn-primary btn-lg px-5">
+                                    <i class="fas fa-envelope me-2"></i>Me contacter pour ce projet
+                                </a>
+                                <button type="button" class="btn btn-outline-primary btn-lg px-5" id="showAllScreenshots">
+                                    <i class="fas fa-expand me-2"></i>Voir toutes les captures
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -2088,6 +2094,45 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.show();
     });
 });
+// Gestion du bouton "Voir plus de détails"
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggleProjectDetails');
+        const projectDetails = document.getElementById('projectDetails');
+        
+        toggleButton.addEventListener('click', function() {
+            if (projectDetails.style.display === 'none' || projectDetails.style.display === '') {
+                // Afficher les détails
+                projectDetails.style.display = 'block';
+                toggleButton.innerHTML = '<i class="fas fa-chevron-up me-2"></i>Voir moins de détails';
+                
+                // Ajouter une animation de fondu
+                projectDetails.style.opacity = '0';
+                projectDetails.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    projectDetails.style.opacity = '1';
+                }, 10);
+                
+                // Défilement doux vers les détails
+                projectDetails.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                // Masquer les détails
+                projectDetails.style.opacity = '0';
+                setTimeout(() => {
+                    projectDetails.style.display = 'none';
+                    toggleButton.innerHTML = '<i class="fas fa-chevron-down me-2"></i>Voir plus de détails';
+                    
+                    // Remonter vers le haut de la section
+                    document.getElementById('projects').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 500);
+            }
+        });
+    });
     </script>
 </body>
 </html>
