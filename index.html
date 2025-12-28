@@ -901,7 +901,45 @@
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.08);
         }
-        
+.project-featured {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.project-featured:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.tech-stack .badge {
+    border: 1px solid rgba(0,0,0,0.1);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tech-stack .badge:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
         .contact-icon {
             width: 70px;
             height: 70px;
@@ -1224,7 +1262,7 @@
                                 <h4>TODY Eugène Romario</h4>
                                 <p>Développeur Web Full-Stack</p>
                                 <div class="mt-4">
-                                    <a href="#" class="btn btn-sm btn-primary me-2">
+                                    <a href="https://www.linkedin.com/in/eugene-romario/" class="btn btn-sm btn-primary me-2">
                                         <i class="fab fa-linkedin me-1"></i> LinkedIn
                                     </a>
                                     <a href="https://github.com/romario3904" class="btn btn-sm btn-outline-primary">
@@ -1723,41 +1761,6 @@
                             </div>
                         </div>
                         
-                        <!-- Liens GitHub -->
-                        <div class="project-links-section mb-5">
-                            <h5 class="mb-4" style="color: var(--dark-color);">
-                                <i class="fab fa-github me-2"></i>Code Source
-                            </h5>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="card border-0 shadow-sm rounded-3 h-100">
-                                        <div class="card-header bg-dark text-white">
-                                            <h6 class="mb-0"><i class="fas fa-desktop me-2"></i>Frontend (Vue.js)</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text">Interface utilisateur développée avec Vue.js, Bootstrap 5 et JavaScript moderne.</p>
-                                            <a href="https://github.com/romario3904/cooperative-reservation-frontend.git" target="_blank" class="btn btn-dark w-100">
-                                                <i class="fab fa-github me-2"></i>Voir le dépôt Frontend
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card border-0 shadow-sm rounded-3 h-100">
-                                        <div class="card-header bg-secondary text-white">
-                                            <h6 class="mb-0"><i class="fas fa-server me-2"></i>Backend (Node.js)</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text">API REST développée avec Node.js, Express et MySQL pour la gestion des données.</p>
-                                            <a href="https://github.com/romario3904/cooperative-reservation-backend.git" target="_blank" class="btn btn-secondary w-100">
-                                                <i class="fab fa-github me-2"></i>Voir le dépôt Backend
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <!-- Boutons d'action -->
                         <div class="project-actions text-center">
                             <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -1775,7 +1778,232 @@
         </div>
     </div>
 </section>
-
+    <!-- Projet - Système de Gestion de Vente de Voitures -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="project-featured fade-in">
+            <div class="project-featured-header mb-4">
+                <h3 class="mb-3" style="color: var(--primary-color); font-size: 1.8rem;">
+                    <i class="fas fa-car me-2"></i>Système de Gestion de Vente de Voitures
+                </h3>
+                <p class="lead" style="font-size: 1.1rem; color: var(--dark-light);">
+                    Application web complète Next.js 14 avec système CRUD, génération de factures PDF et tableau de bord analytique
+                </p>
+                
+                <!-- Bouton Voir plus de détails -->
+                <button class="btn btn-outline-primary btn-sm mt-2 toggle-project-details" data-target="voitureDetails">
+                    <i class="fas fa-chevron-down me-2"></i>Voir les détails techniques
+                </button>
+            </div>
+            
+            <!-- Contenu détaillé (masqué par défaut) -->
+            <div id="voitureDetails" style="display: none;">
+                <!-- Image principale du projet -->
+                <div class="project-main-image mb-4">
+                    <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
+                        <div class="card-header bg-success text-white py-2 d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0"><i class="fas fa-tachometer-alt me-2"></i>Tableau de Bord - Revenus</h6>
+                            <span class="badge bg-light text-success">Next.js 14 + Prisma + MySQL</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="text-center bg-light py-3">
+                                <img src="assets/img/gestionVoiture/dashboard.png" alt="Dashboard du système de vente de voitures" class="img-fluid rounded-2" style="max-height: 300px; border: 1px solid #dee2e6;">
+                            </div>
+                            <div class="card-footer bg-light py-2 text-center">
+                                <small class="text-muted">Visualisation des revenus sur 6 mois avec Chart.js</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Description détaillée -->
+                <div class="project-description mb-4">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h6 class="mb-2" style="color: var(--dark-color);">Architecture Full-Stack Moderne</h6>
+                            <p class="mb-3 small">
+                                Développement d'une application de gestion automobile complète avec architecture full-stack utilisant Next.js 14, 
+                                Prisma ORM et MySQL. Le système offre une gestion complète des clients, véhicules et transactions.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled small">
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>CRUD complet clients/voitures/achats</li>
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>Génération de factures PDF avec PDFKit</li>
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>Tableau de bord avec Chart.js</li>
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>Interface responsive Bootstrap 5</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled small">
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>Recherche avancée par date/période</li>
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>Édition inline des données</li>
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>Gestion de stock automatique</li>
+                                        <li class="mb-1"><i class="fas fa-check-circle text-success me-1"></i>API REST sécurisée</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card border-0 shadow-sm rounded-3 h-100">
+                                <div class="card-header bg-light py-2">
+                                    <h6 class="mb-0"><i class="fas fa-layer-group me-2"></i>Stack Technique</h6>
+                                </div>
+                                <div class="card-body p-2">
+                                    <div class="tech-stack">
+                                        <span class="badge bg-success-subtle text-success mb-1 p-1 d-block">Next.js 14.0.0</span>
+                                        <span class="badge bg-info-subtle text-info mb-1 p-1 d-block">React 18.2.0</span>
+                                        <span class="badge bg-primary-subtle text-primary mb-1 p-1 d-block">Prisma 5.8.0</span>
+                                        <span class="badge bg-warning-subtle text-warning mb-1 p-1 d-block">MySQL</span>
+                                        <span class="badge bg-danger-subtle text-danger mb-1 p-1 d-block">Chart.js 4.4.0</span>
+                                        <span class="badge bg-dark-subtle text-dark mb-1 p-1 d-block">PDFKit 0.13.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galerie de captures d'écran -->
+                <div class="project-gallery mb-4">
+                    <h6 class="mb-3" style="color: var(--dark-color);">
+                        <i class="fas fa-desktop me-2"></i>Interfaces principales
+                    </h6>
+                    <div class="row g-3">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gallery-item card border-0 shadow-sm rounded-2 h-100 overflow-hidden">
+                                <div class="card-header bg-light py-1">
+                                    <h6 class="mb-0 text-center small">Page d'Accueil</h6>
+                                </div>
+                                <div class="card-body p-0 text-center bg-light">
+                                    <img src="assets/img/gestionVoiture/accueil.png" alt="Page d'accueil" class="img-fluid" style="max-height: 120px;">
+                                </div>
+                                <div class="card-footer bg-light py-1 text-center">
+                                    <small class="text-muted d-block">Présentation du système</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gallery-item card border-0 shadow-sm rounded-2 h-100 overflow-hidden">
+                                <div class="card-header bg-light py-1">
+                                    <h6 class="mb-0 text-center small">Gestion Clients</h6>
+                                </div>
+                                <div class="card-body p-0 text-center bg-light">
+                                    <img src="assets/img/gestionVoiture/clients.png" alt="Gestion des clients" class="img-fluid" style="max-height: 120px;">
+                                </div>
+                                <div class="card-footer bg-light py-1 text-center">
+                                    <small class="text-muted d-block">CRUD clients avec édition inline</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gallery-item card border-0 shadow-sm rounded-2 h-100 overflow-hidden">
+                                <div class="card-header bg-light py-1">
+                                    <h6 class="mb-0 text-center small">Gestion Véhicules</h6>
+                                </div>
+                                <div class="card-body p-0 text-center bg-light">
+                                    <img src="assets/img/gestionVoiture/voiture.png" alt="Gestion des voitures" class="img-fluid" style="max-height: 120px;">
+                                </div>
+                                <div class="card-footer bg-light py-1 text-center">
+                                    <small class="text-muted d-block">Inventaire avec stocks</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="gallery-item card border-0 shadow-sm rounded-2 h-100 overflow-hidden">
+                                <div class="card-header bg-light py-1">
+                                    <h6 class="mb-0 text-center small">Gestion Achats</h6>
+                                </div>
+                                <div class="card-body p-0 text-center bg-light">
+                                    <img src="assets/img/gestionVoiture/achats.png" alt="Gestion des achats" class="img-fluid" style="max-height: 120px;">
+                                </div>
+                                <div class="card-footer bg-light py-1 text-center">
+                                    <small class="text-muted d-block">Transactions avec recherche</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="gallery-item card border-0 shadow-sm rounded-2 h-100 overflow-hidden">
+                                <div class="card-header bg-light py-1">
+                                    <h6 class="mb-0 text-center small">Facture PDF</h6>
+                                </div>
+                                <div class="card-body p-0 text-center bg-light">
+                                    <img src="assets/img/gestionVoiture/facture.png" alt="Facture générée" class="img-fluid" style="max-height: 120px;">
+                                </div>
+                                <div class="card-footer bg-light py-1 text-center">
+                                    <small class="text-muted d-block">Génération PDF automatisée</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="gallery-item card border-0 shadow-sm rounded-2 h-100 overflow-hidden">
+                                <div class="card-header bg-light py-1">
+                                    <h6 class="mb-0 text-center small">Base de Données</h6>
+                                </div>
+                                <div class="card-body p-0 text-center bg-light">
+                                    <div class="p-2">
+                                        <i class="fas fa-database fa-3x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-light py-1 text-center">
+                                    <small class="text-muted d-block">MySQL avec relations</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Points forts techniques -->
+                <div class="project-highlights mb-3">
+                    <h6 class="mb-2" style="color: var(--dark-color);">
+                        <i class="fas fa-bolt me-2"></i>Points Forts Techniques
+                    </h6>
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <div class="card border-0 bg-light rounded-2 p-2 h-100">
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="fas fa-server text-primary me-2"></i>
+                                    <strong class="small">Architecture Full-Stack</strong>
+                                </div>
+                                <p class="small mb-0">Next.js 14 avec App Router, API Routes, Server Components</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 bg-light rounded-2 p-2 h-100">
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="fas fa-shield-alt text-success me-2"></i>
+                                    <strong class="small">Type Safety</strong>
+                                </div>
+                                <p class="small mb-0">Prisma ORM avec validation de types et relations sécurisées</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 bg-light rounded-2 p-2 h-100">
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="fas fa-chart-line text-warning me-2"></i>
+                                    <strong class="small">Analytics</strong>
+                                </div>
+                                <p class="small mb-0">Chart.js pour la visualisation des données et tendances</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Boutons d'action -->
+                <div class="project-actions text-center mt-3">
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <a href="#contact" class="btn btn-success btn-sm px-3">
+                            <i class="fas fa-code me-1"></i>Code source disponible
+                        </a>
+                        <button type="button" class="btn btn-outline-success btn-sm px-3" onclick="window.open('assets/img/gestionVoiture/accueil.png', '_blank')">
+                            <i class="fas fa-external-link-alt me-1"></i>Voir en grand
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -1843,7 +2071,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1854,7 +2082,7 @@
                 </div>
                 <div class="col-lg-6 text-center text-lg-end">
                     <div class="social-links">
-                        <a href="#" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/eugene-romario/" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://github.com/romario3904" title="GitHub">
@@ -2127,6 +2355,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    // Gestion des boutons de détail des projets
+document.querySelectorAll('.toggle-project-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        const icon = this.querySelector('i');
+        
+        if (targetElement.style.display === 'none' || targetElement.style.display === '') {
+            targetElement.style.display = 'block';
+            icon.className = 'fas fa-chevron-up me-2';
+            this.innerHTML = '<i class="fas fa-chevron-up me-2"></i>Masquer les détails';
+        } else {
+            targetElement.style.display = 'none';
+            icon.className = 'fas fa-chevron-down me-2';
+            this.innerHTML = '<i class="fas fa-chevron-down me-2"></i>Voir les détails techniques';
+        }
+        
+        // Animation smooth
+        targetElement.style.opacity = '0';
+        targetElement.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => {
+            targetElement.style.opacity = '1';
+        }, 10);
+    });
+});
     </script>
 </body>
 </html>
