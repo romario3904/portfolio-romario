@@ -547,23 +547,20 @@
             color: var(--dark-color);
         }
         
-        .skill-percentage {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
+        /* Retirer le style pour skill-percentage */
         
         .progress {
-            height: 10px;
+            height: 8px;
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.05);
             overflow: hidden;
+            margin-top: 0.5rem;
         }
         
         .progress-bar {
             background: var(--gradient-primary);
             border-radius: 5px;
-            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
         }
         
         /* Projects Section améliorée */
@@ -1357,72 +1354,54 @@
                     <div class="skill-category fade-in">
                         <h4><i class="fas fa-palette me-2"></i>Développement Frontend</h4>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-html5 text-danger"></i>
-                                    HTML5
-                                </div>
-                                <div class="skill-percentage">90%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-html5 text-danger"></i>
+                                HTML5
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-css3-alt text-primary"></i>
-                                    CSS3
-                                </div>
-                                <div class="skill-percentage">85%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-css3-alt text-primary"></i>
+                                CSS3
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-js-square text-warning"></i>
-                                    JavaScript
-                                </div>
-                                <div class="skill-percentage">80%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-js-square text-warning"></i>
+                                JavaScript
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="80%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-react text-react"></i>
-                                    React.js
-                                </div>
-                                <div class="skill-percentage">75%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-react text-react"></i>
+                                React.js
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-vuejs text-vue"></i>
-                                    Vue.js
-                                </div>
-                                <div class="skill-percentage">70%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-vuejs text-vue"></i>
+                                Vue.js
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-angular text-angular"></i>
-                                    Angular
-                                </div>
-                                <div class="skill-percentage">65%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-angular text-angular"></i>
+                                Angular
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="65%"></div>
@@ -1434,48 +1413,36 @@
                     <div class="skill-category fade-in" style="animation-delay: 0.1s;">
                         <h4><i class="fas fa-server me-2"></i>Développement Backend</h4>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-php text-info"></i>
-                                    PHP
-                                </div>
-                                <div class="skill-percentage">75%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-php text-info"></i>
+                                PHP
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-microsoft text-csharp"></i>
-                                    C#
-                                </div>
-                                <div class="skill-percentage">70%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-microsoft text-csharp"></i>
+                                C#
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-node-js text-success"></i>
-                                    Node.js
-                                </div>
-                                <div class="skill-percentage">65%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-node-js text-success"></i>
+                                Node.js
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="65%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-java text-danger"></i>
-                                    Java
-                                </div>
-                                <div class="skill-percentage">70%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-java text-danger"></i>
+                                Java
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="70%"></div>
@@ -1487,60 +1454,45 @@
                     <div class="skill-category fade-in" style="animation-delay: 0.2s;">
                         <h4><i class="fas fa-database me-2"></i>Bases de données & Outils</h4>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fas fa-database text-warning"></i>
-                                    MySQL
-                                </div>
-                                <div class="skill-percentage">80%</div>
+                            <div class="skill-name">
+                                <i class="fas fa-database text-warning"></i>
+                                MySQL
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="80%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fas fa-database text-postgresql"></i>
-                                    PostgreSQL
-                                </div>
-                                <div class="skill-percentage">75%</div>
+                            <div class="skill-name">
+                                <i class="fas fa-database text-postgresql"></i>
+                                PostgreSQL
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fas fa-database text-sqlite"></i>
-                                    SQLite
-                                </div>
-                                <div class="skill-percentage">70%</div>
+                            <div class="skill-name">
+                                <i class="fas fa-database text-sqlite"></i>
+                                SQLite
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fab fa-git-alt text-danger"></i>
-                                    Git
-                                </div>
-                                <div class="skill-percentage">75%</div>
+                            <div class="skill-name">
+                                <i class="fab fa-git-alt text-danger"></i>
+                                Git
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-name">
-                                    <i class="fas fa-code text-info"></i>
-                                    VS Code
-                                </div>
-                                <div class="skill-percentage">90%</div>
+                            <div class="skill-name">
+                                <i class="fas fa-code text-info"></i>
+                                VS Code
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" data-width="90%"></div>
@@ -2028,7 +1980,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p class="mb-0">&copy; 2024 TODY Eugène Romario. Tous droits réservés.</p>
+                <p class="mb-0">&copy; 2026 TODY Eugène Romario. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -2258,7 +2210,7 @@
                 if (elementTop < windowHeight - 100) {
                     element.classList.add('visible');
                     
-                    // Animate progress bars
+                    // Animate progress bars (sans pourcentages)
                     if (element.classList.contains('skill-category') || element.querySelector('.progress-bar')) {
                         const progressBars = element.querySelectorAll('.progress-bar');
                         progressBars.forEach(bar => {
