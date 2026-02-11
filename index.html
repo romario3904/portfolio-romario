@@ -1029,6 +1029,27 @@
         .text-sqlite { color: #003b57; }
         .text-purple { color: #6f42c1 !important; }
         
+        /* Message d'alerte personnalisé */
+        .alert-message {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 2000;
+            min-width: 300px;
+            max-width: 400px;
+            animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
         /* Responsive */
         @media (max-width: 1200px) {
             .hero-title {
@@ -1132,6 +1153,14 @@
             
             .gallery-item img {
                 height: 100px;
+            }
+            
+            .alert-message {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+                min-width: auto;
+                max-width: none;
             }
         }
     </style>
@@ -1358,11 +1387,17 @@
                                 <i class="fab fa-html5 text-danger"></i>
                                 HTML5
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fab fa-css3-alt text-primary"></i>
                                 CSS3
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -1370,12 +1405,17 @@
                                 <i class="fab fa-js-square text-warning"></i>
                                 JavaScript
                             </div>
-
+                            <div class="progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fab fa-react text-react"></i>
                                 React.js
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -1383,11 +1423,17 @@
                                 <i class="fab fa-vuejs text-vue"></i>
                                 Vue.js
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fab fa-angular text-angular"></i>
                                 Angular
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="65%"></div>
                             </div>
                         </div>
                     </div>
@@ -1400,11 +1446,17 @@
                                 <i class="fab fa-php text-info"></i>
                                 PHP
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="75%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fab fa-microsoft text-csharp"></i>
                                 C#
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -1412,11 +1464,17 @@
                                 <i class="fab fa-node-js text-success"></i>
                                 Node.js
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="65%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fab fa-java text-danger"></i>
                                 Java
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
                             </div>
                         </div>
                     </div>
@@ -1429,11 +1487,17 @@
                                 <i class="fas fa-database text-warning"></i>
                                 MySQL
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fas fa-database text-postgresql"></i>
                                 PostgreSQL
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="75%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -1441,17 +1505,26 @@
                                 <i class="fas fa-database text-sqlite"></i>
                                 SQLite
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="70%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fab fa-git-alt text-danger"></i>
                                 Git
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="75%"></div>
+                            </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <i class="fas fa-code text-info"></i>
                                 VS Code
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" data-width="90%"></div>
                             </div>
                         </div>
                     </div>
@@ -1860,23 +1933,24 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="contact-form fade-in">
-                        <form id="contactForm">
+                        <!-- IMPORTANT : Remplacez "xxxxxxxxx" par votre ID Formspree -->
+                        <form action="https://formspree.io/f/xeelezwz" method="POST" id="contactForm">
                             <div class="row">
                                 <div class="col-md-6 mb-4">
-                                    <input type="text" class="form-control" id="name" placeholder="Votre nom *" required>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Votre nom *" required>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <input type="email" class="form-control" id="email" placeholder="Votre email *" required>
+                                    <input type="email" class="form-control" name="_replyto" id="email" placeholder="Votre email *" required>
                                 </div>
                             </div>
                             <div class="mb-4">
-                                <input type="text" class="form-control" id="subject" placeholder="Sujet du message *" required>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet du message *" required>
                             </div>
                             <div class="mb-4">
-                                <textarea class="form-control" id="message" rows="5" placeholder="Votre message *" required></textarea>
+                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Votre message *" required></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
                                     <i class="fas fa-paper-plane me-2"></i>Envoyer le message
                                 </button>
                             </div>
@@ -2207,28 +2281,51 @@
             });
         });
         
-        // Contact form submission
+        // Contact form submission avec Formspree
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnText = submitBtn.innerHTML;
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            // Désactiver le bouton pendant l'envoi
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Envoi en cours...';
             
-            // Simple validation
-            if (!name || !email || !subject || !message) {
-                alert('Veuillez remplir tous les champs obligatoires (*)');
-                return;
-            }
+            // La soumission réelle se fera via Formspree
+            // On ajoute juste un feedback utilisateur
             
-            // Show success message
-            alert(`Merci ${name}! Votre message a été envoyé avec succès. Je vous répondrai à ${email} dans les plus brefs délais.`);
-            
-            // Reset form
-            this.reset();
+            // Après 1.5 secondes, on remet le bouton normal
+            setTimeout(() => {
+                showAlert('Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.', 'success');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                
+                // Réinitialiser le formulaire
+                this.reset();
+            }, 1500);
         });
+        
+        // Fonction pour afficher des alertes personnalisées
+        function showAlert(message, type = 'success') {
+            // Supprimer les anciennes alertes
+            const oldAlerts = document.querySelectorAll('.alert-message');
+            oldAlerts.forEach(alert => alert.remove());
+            
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert-message alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
+            alertDiv.innerHTML = `
+                <strong>${type === 'success' ? 'Succès!' : 'Erreur!'}</strong> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(alertDiv);
+            
+            // Supprimer automatiquement après 3 secondes
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 3000);
+        }
         
         // Initialize tooltips
         document.addEventListener('DOMContentLoaded', function() {
