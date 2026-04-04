@@ -1,31 +1,51 @@
 // Portfolio JavaScript - TODY Eugène Romario
-// Version avec chargement des sections
+// Version sans jQuery - Chargement natif des sections
 
-$(document).ready(function() {
-    // Charger toutes les sections
-    function loadSections() {
-        const sections = [
-            { id: 'header', url: 'sections/header.html' },
-            { id: 'hero', url: 'sections/hero.html' },
-            { id: 'about', url: 'sections/about.html' },
-            { id: 'skills', url: 'sections/skills.html' },
-            { id: 'projects', url: 'sections/projects.html' },
-            { id: 'contact', url: 'sections/contact.html' },
-            { id: 'footer', url: 'sections/footer.html' }
-        ];
-        
-        let loadedCount = 0;
-        
-        sections.forEach(section => {
-            $(`#${section.id}`).load(section.url, function() {
-                loadedCount++;
-                if (loadedCount === sections.length) {
-                    // Toutes les sections sont chargées, initialiser les fonctionnalités
-                    initializeAll();
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Fonction pour charger une section HTML
+    function loadSection(elementId, fileUrl) {
+        return fetch(fileUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById(elementId).innerHTML = html;
+                return true;
+            })
+            .catch(error => {
+                console.error(`Erreur chargement ${fileUrl}:`, error);
+                document.getElementById(elementId).innerHTML = `<div class="alert alert-danger">Erreur chargement de la section</div>`;
+                return false;
             });
-        });
     }
+    
+    // Charger toutes les sections
+    const sections = [
+        { id: 'header', url: 'sections/header.html' },
+        { id: 'hero', url: 'sections/hero.html' },
+        { id: 'about', url: 'sections/about.html' },
+        { id: 'skills', url: 'sections/skills.html' },
+        { id: 'projects', url: 'sections/projects.html' },
+        { id: 'contact', url: 'sections/contact.html' },
+        { id: 'footer', url: 'sections/footer.html' }
+    ];
+    
+    let loadedCount = 0;
+    const totalSections = sections.length;
+    
+    sections.forEach(section => {
+        loadSection(section.id, section.url).then(() => {
+            loadedCount++;
+            if (loadedCount === totalSections) {
+                // Toutes les sections sont chargées
+                initializeAll();
+            }
+        });
+    });
     
     function initializeAll() {
         // Navigation scroll effect
@@ -145,13 +165,31 @@ $(document).ready(function() {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Envoi en cours...';
                 
-                // Simuler l'envoi (vous pouvez remplacer par un vrai fetch)
-                setTimeout(() => {
-                    showAlert('Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.', 'success');
+                // Envoi vers Formspree
+                const formData = new FormData(contactForm);
+                
+                fetch('https://formspree.io/f/xeelezwz', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showAlert('Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.', 'success');
+                        contactForm.reset();
+                    } else {
+                        showAlert('Une erreur est survenue. Veuillez réessayer.', 'danger');
+                    }
+                })
+                .catch(error => {
+                    showAlert('Une erreur est survenue. Veuillez réessayer.', 'danger');
+                })
+                .finally(() => {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
-                    contactForm.reset();
-                }, 1500);
+                });
             });
         }
         
@@ -226,14 +264,16 @@ $(document).ready(function() {
         });
         
         // Modals
-        const showAllBtn = document.getElementById('showAllScreenshots');
-        if (showAllBtn && typeof bootstrap !== 'undefined') {
-            showAllBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('screenshotsModal')).show());
-        }
-        
-        const showVoitureBtn = document.getElementById('showVoitureScreenshots');
-        if (showVoitureBtn && typeof bootstrap !== 'undefined') {
-            showVoitureBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('voitureScreenshotsModal')).show());
+        if (typeof bootstrap !== 'undefined') {
+            const showAllBtn = document.getElementById('showAllScreenshots');
+            if (showAllBtn) {
+                showAllBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('screenshotsModal')).show());
+            }
+            
+            const showVoitureBtn = document.getElementById('showVoitureScreenshots');
+            if (showVoitureBtn) {
+                showVoitureBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('voitureScreenshotsModal')).show());
+            }
         }
         
         // Image error handling
@@ -256,13 +296,10 @@ $(document).ready(function() {
         checkVisibility();
         
         console.log(`
-         Portfolio de TODY Eugène Romario
-         Contact: romarioeugene4@gmail.com
-         Étudiant Master Professionnel - ENI
-         Développé avec JavaScript & Bootstrap
+🎉 Portfolio de TODY Eugène Romario
+📧 Contact: romarioeugene4@gmail.com
+🎓 Étudiant Master Professionnel - ENI
+💻 Développé avec JavaScript & Bootstrap
         `);
     }
-    
-    // Démarrer le chargement
-    loadSections();
 });
