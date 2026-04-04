@@ -275,7 +275,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 showVoitureBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('voitureScreenshotsModal')).show());
             }
         }
-        
+        // Modal pour le projet DHTML
+        const showDhtmlBtn = document.getElementById('showDhtmlScreenshots');
+        if (showDhtmlBtn && typeof bootstrap !== 'undefined') {
+            showDhtmlBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('dhtmlScreenshotsModal')).show());
+        }
         // Image error handling
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('error', function() {
