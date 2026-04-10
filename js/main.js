@@ -48,6 +48,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function initializeAll() {
+        // Theme management (auto + persisted)
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const toggleBtn = document.getElementById('themeToggleBtn');
+            if (!toggleBtn) return;
+
+            const isDark = theme === 'dark';
+            toggleBtn.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
+            toggleBtn.setAttribute('aria-label', isDark ? 'Activer le mode clair' : 'Activer le mode sombre');
+            toggleBtn.setAttribute('title', isDark ? 'Mode clair' : 'Mode sombre');
+        }
+
+        function getPreferredTheme() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        applyTheme(getPreferredTheme());
+
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                localStorage.setItem('portfolio-theme', nextTheme);
+                applyTheme(nextTheme);
+            });
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            if (!localStorage.getItem('portfolio-theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
         // Navigation scroll effect
         function handleNavbarScroll() {
             const navbar = document.querySelector('.navbar');
@@ -273,6 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const showVoitureBtn = document.getElementById('showVoitureScreenshots');
             if (showVoitureBtn) {
                 showVoitureBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('voitureScreenshotsModal')).show());
+            }
+
+            const showAnalanjirofoBtn = document.getElementById('showAnalanjirofoScreenshots');
+            if (showAnalanjirofoBtn) {
+                showAnalanjirofoBtn.addEventListener('click', () => new bootstrap.Modal(document.getElementById('analanjirofoScreenshotsModal')).show());
             }
         }
         // Modal pour le projet DHTML
