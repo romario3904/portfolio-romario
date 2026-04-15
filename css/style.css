@@ -996,14 +996,22 @@ button:focus-visible,
     --bg-soft: #0c2336;
     --bg-card: #0e2b42;
     --line-soft: rgba(255, 255, 255, 0.12);
-    --txt-main: #f1f5f9;
-    --txt-muted: #9fb5c7;
+    --txt-main: #f3f7fb;
+    --txt-muted: #c5d3df;
     --accent-main: #ff6b4a;
 }
 
 body {
     background: var(--bg-main);
     color: var(--txt-main);
+}
+
+p,
+li,
+label,
+small,
+.text-muted {
+    color: var(--txt-muted) !important;
 }
 
 .navbar,
@@ -1055,13 +1063,13 @@ body {
 }
 
 .hero-subtitle {
-    color: #d8e3ec;
+    color: #e1eaf2;
     font-size: 2rem;
     font-weight: 700;
 }
 
 .hero-description {
-    color: var(--txt-muted);
+    color: #d4e0ea;
     max-width: 560px;
 }
 
@@ -1128,7 +1136,16 @@ footer h4 {
 .contact-info p,
 .copyright,
 .stat-item .label {
-    color: var(--txt-muted);
+    color: #cedbe6;
+}
+
+.about-card li,
+.project-featured p,
+.project-featured li,
+.contact-intro p,
+footer p,
+footer li {
+    color: #d4e0ea;
 }
 
 .section-title::after {
@@ -1148,7 +1165,7 @@ footer {
 
 .tech-stack .badge {
     background: #16354d;
-    color: #dbe8f4;
+    color: #ecf4fb;
     border: 1px solid var(--line-soft);
 }
 
@@ -1217,6 +1234,10 @@ footer {
 .modal-content .modal-title,
 .modal-content .card-header {
     color: var(--dark-color);
+}
+
+.modal-content .text-muted {
+    color: var(--gray-color) !important;
 }
 
 @media (max-width: 768px) {
