@@ -1112,9 +1112,12 @@ body {
 .section-title,
 .about-content h3,
 .contact-intro h3,
-h3,
-h4,
-h5 {
+.projects-section h3,
+.projects-section h4,
+.contact-section h3,
+.contact-section h4,
+.contact-section h5,
+footer h4 {
     color: #ffffff;
 }
 
@@ -1194,6 +1197,26 @@ footer {
 
 .social-links a {
     background: #16354d;
+}
+
+/* Lisibilite des contenus clairs (modales, cartes Bootstrap) */
+.modal-content,
+.modal-content p,
+.modal-content li,
+.modal-content span,
+.modal-content div {
+    color: var(--dark-light);
+}
+
+.modal-content h1,
+.modal-content h2,
+.modal-content h3,
+.modal-content h4,
+.modal-content h5,
+.modal-content h6,
+.modal-content .modal-title,
+.modal-content .card-header {
+    color: var(--dark-color);
 }
 
 @media (max-width: 768px) {
