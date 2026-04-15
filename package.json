@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-tody-romario",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio statique avec pipeline CI/CD GitHub Actions",
+  "scripts": {
+    "lint": "node scripts/validate-portfolio.js --mode=lint",
+    "test": "node scripts/validate-portfolio.js --mode=test",
+    "build": "node scripts/build-dist.js",
+    "ci": "npm run lint && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

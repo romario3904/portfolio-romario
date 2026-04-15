@@ -144,6 +144,35 @@ Le portfolio est entièrement responsive avec des breakpoints :
 - **Serveur web classique** : Uploadez les fichiers via FTP
 - **CDN** : Utilisez un CDN pour de meilleures performances
 
+## ⚙️ Pipeline CI/CD (GitHub Actions)
+
+Le projet inclut maintenant une pipeline complète dans `.github/workflows/ci-cd.yml` :
+
+- **CI sur PR et push** vers `main`/`master`
+  - Installation des dépendances (`npm ci`)
+  - Vérification structure/ressources (`npm run lint`)
+  - Tests de cohérence (`npm test`)
+  - Build de livraison (`npm run build`)
+- **CD automatique** sur push `main`/`master`
+  - Publication du dossier `dist/` vers **GitHub Pages**
+
+### Scripts disponibles
+
+```bash
+npm ci
+npm run lint
+npm test
+npm run build
+npm run ci
+```
+
+### Activation GitHub Pages
+
+1. Ouvrez les paramètres GitHub du dépôt.
+2. Allez dans **Pages**.
+3. Dans **Build and deployment**, sélectionnez **GitHub Actions** comme source.
+4. Poussez sur `main` (ou `master`) pour déclencher le premier déploiement.
+
 ## 📞 Support
 
 Pour toute question ou personnalisation :
