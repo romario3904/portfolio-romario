@@ -468,7 +468,7 @@ section {
 .about-card h5 {
     font-size: 1.5rem;
     margin-bottom: 1.8rem;
-    color: var(--dark-color);
+    color: white;
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -550,7 +550,7 @@ section {
 .skill-category h4 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: var(--dark-color);
+    color: white;
     display: flex;
     align-items: center;
     gap: 0.8rem;
